@@ -2,6 +2,24 @@
 
 A modern, responsive blog application built with Next.js 15 and Tailwind CSS. This project demonstrates best practices in building a modern web application with features like dynamic routing, API integration, and responsive design.
 
+## Screenshots
+
+### Home Page
+![Home Page](/public/image1.png)
+*Modern homepage with featured posts and call-to-action*
+
+### Posts Page
+![Posts Page](/public/image2.png)
+*Grid layout showing all posts with hover effects*
+
+### Add Post Modal
+![Add Post Modal](/public/image3.png)
+*Clean, modal-based interface for creating new posts*
+
+### Add Post Modal
+![post details](/public/image4.png)
+*Modern, layout interface for post details*
+
 ## Features
 
 - 🚀 Built with Next.js 15 and React 19 (RC)
