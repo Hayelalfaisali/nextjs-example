@@ -33,7 +33,7 @@ A modern, responsive blog application built with Next.js 15 and Tailwind CSS. Th
 
 ## Demo
 
-[Live Demo](#) (Coming soon)
+[Live Demo](https://nextjs-example-ecvpzgdm5-hayel-al-faisalis-projects.vercel.app/)
 
 ## Getting Started
 
