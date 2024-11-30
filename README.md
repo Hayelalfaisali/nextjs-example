@@ -16,7 +16,7 @@ A modern, responsive blog application built with Next.js 15 and Tailwind CSS. Th
 ![Add Post Modal](/public/image3.png)
 *Clean, modal-based interface for creating new posts*
 
-### Add Post Modal
+### Post Details Page
 ![post details](/public/image4.png)
 *Modern, layout interface for post details*
 
