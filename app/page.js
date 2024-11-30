@@ -1,95 +1,58 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import Link from "next/link";
+import posts from './data/posts.json';
 
 export default function Home() {
-  return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>app/page.js</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+  // Get the latest 2 posts for the featured section
+  const featuredPosts = posts.posts.slice(0, 2);
 
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
+  return (
+    <div className="min-h-screen bg-white">
+      <div className="container mx-auto px-4 py-16">
+        <h1 className="mb-8 text-center text-4xl font-bold text-gray-900">
+          Welcome to Next.js Example
+        </h1>
+        <p className="mb-12 text-center text-lg text-gray-600">
+          A modern web application built with Next.js and Tailwind CSS
+        </p>
+
+        {/* Featured Posts */}
+        <div className="mb-8">
+          <h2 className="mb-6 text-2xl font-bold text-gray-900">Featured Posts</h2>
+          <div className="grid gap-6 md:grid-cols-2">
+            {featuredPosts.map((post) => (
+              <Link href={`/posts/${post.id}`} key={post.id}>
+                <div className="rounded-lg border bg-white p-6 shadow-sm transition-shadow hover:shadow-md">
+                  <h3 className="mb-2 text-xl font-semibold text-gray-900">{post.title}</h3>
+                  <p className="mb-4 text-gray-600">{post.content.substring(0, 100)}...</p>
+                  <span className="text-sm text-gray-500">{post.date}</span>
+                </div>
+              </Link>
+            ))}
+          </div>
         </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+
+        <div className="flex justify-center">
+          <Link
+            href="/posts"
+            className="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-blue-700"
+          >
+            View All Posts
+            <svg
+              className="h-3 w-3"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M9 5l7 7-7 7"
+              />
+            </svg>
+          </Link>
+        </div>
+      </div>
     </div>
   );
 }

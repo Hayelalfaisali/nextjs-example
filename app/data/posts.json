@@ -1,0 +1,22 @@
+{
+  "posts": [
+    {
+      "id": "1",
+      "title": "Getting Started with Next.js",
+      "content": "Next.js is a powerful React framework that makes building web applications simple and efficient.",
+      "date": "2024-01-15"
+    },
+    {
+      "id": "2",
+      "title": "Why Tailwind CSS is Amazing",
+      "content": "Tailwind CSS provides a utility-first approach to styling that speeds up development significantly.",
+      "date": "2024-01-16"
+    },
+    {
+      "id": "3",
+      "title": "Building Modern Web Apps",
+      "content": "Learn how to build modern web applications using the latest technologies and best practices.",
+      "date": "2024-01-17"
+    }
+  ]
+}
